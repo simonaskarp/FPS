@@ -3,9 +3,10 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public GameObject hitPrefab; //bullet hole
+    public ParticleSystem hitSmoke;
     public GameObject mFlashPrefab; //muzzle flash
     public float maxDistance = 100;
-    
+
     public AudioClip shotSound;
     AudioSource audio;
 
@@ -41,6 +42,8 @@ public class Gun : MonoBehaviour
             var hitObj = Instantiate(hitPrefab, hit.point, Quaternion.Euler(0, 0, 0));
             hitObj.transform.forward = hit.normal;
             hitObj.transform.position += hit.normal * 0.01f;
+            var smoke = Instantiate(hitSmoke, hit.point, Quaternion.Euler(0, 0, 0));
+            smoke.transform.forward = hitSmoke.transform.forward;
         }
     }
 

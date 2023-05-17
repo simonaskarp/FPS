@@ -18,8 +18,9 @@ public class Gun : MonoBehaviour
     public int ammo;
 
     public float recoilAngle = 1;
-
     public int shotsPerAmmo = 1;
+
+    public int damage = 10;
 
     private void Start()
     {
@@ -70,7 +71,7 @@ public class Gun : MonoBehaviour
             var health = hit.transform.GetComponent<Health>();
             if (health)
             {
-                health.Damage();
+                health.Damage(damage);
             }
 
             if (!hit.transform.CompareTag("Enemy"))

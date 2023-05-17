@@ -839,6 +839,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  maxAmmo: 30
+  ammo: 30
+  recoilAngle: 2
+  shotsPerAmmo: 1
 --- !u!1 &979676059
 GameObject:
   m_ObjectHideFlags: 0
